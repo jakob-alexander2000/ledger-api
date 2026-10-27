@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ledger}
+    driver-class-name: org.postgresql.Driver
+    username: ${SPRING_DATASOURCE_USERNAME:ledger}
+    password: ${SPRING_DATASOURCE_PASSWORD:ledger}
+    hikari:
+      connection-init-sql: SET TIME ZONE 'UTC'
+  flyway:
+    locations: classpath:db/migration,classpath:db/vendor/postgres
